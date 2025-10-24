@@ -51,9 +51,9 @@ if st.button("Recommend"):
     top_idx = np.argsort(-sims)[:top_k]
     st.subheader("Top Recommendations")
     for rank, i in enumerate(top_idx, start=1):
-        st.markdown(f"**#{rank}. {df.loc[i, 'title']}** — {df.loc[i, 'artist']}  
-"
-                        f"Genres: `{df.loc[i, 'genres']}` | Mood: `{df.loc[i, 'mood']}`")
+        st.markdown(
+    f"**#{rank}. {df.loc[i, 'title']}** — {df.loc[i, 'artist']}  "
+    f"Genres: `{df.loc[i, 'genres']}` | Mood: `{df.loc[i, 'mood']}`")
 
 with st.expander("Dataset Preview"):
     st.dataframe(df)
